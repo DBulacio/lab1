@@ -3,7 +3,7 @@
 #include <conio.h>
 #include <string.h>
 
-#define TAM 3
+#define TAM 10
 
 typedef struct
 {
@@ -25,6 +25,7 @@ typedef struct
     int isEmpty;
 } eAlumno;
 
+int hardcodearAlumnos(eAlumno vec[], int tam, int cant);
 void mostrarAlumno(eAlumno x);
 void mostrarAlumnos(eAlumno vec[], int tam);
 void ordenarAlumnos(eAlumno vec[], int tam);
@@ -43,12 +44,12 @@ int main()
     eAlumno lista[TAM];
     int legajo = 20000;
     char salir = 'n';
-    int altaOK;
 
     inicializarAlumnos(lista, TAM);
 
-    eAlumno x = { 1234, "Juan", 21, 'm', 2, 10, 6,{12, 5, 2018}, 0};
-    lista[0] = x;
+    // testing
+    legajo += hardcodearAlumnos(lista, TAM, 10);
+
     do
     {
         switch(menu())
@@ -70,21 +71,17 @@ int main()
             break;
         case 4:
             mostrarAlumnos(lista, TAM);
-            // aca va el alta alumno
             break;
         case 5:
             ordenarAlumnos(lista, TAM);
-            // aca va el alta alumno
             break;
         case 6:
             printf("Informes\n");
-            // aca va el alta alumno
             break;
         case 7:
             printf("Corfirma Salida?");
             fflush(stdin);
             salir = getch();
-            // aca va el alta alumno
             break;
         default:
             printf("Opcion invalida\n");
@@ -99,7 +96,7 @@ int main()
 
 void mostrarAlumno(eAlumno x)
 {
-    printf("  %d  %s  %d  %c  %d %d %.2f %02d/%02d/%d\n",
+    printf("  %d  %10s     %2d     %c      %2d     %2d      %3.2f    %02d/%02d/%d\n",
            x.legajo,
            x.nombre,
            x.edad,
@@ -118,7 +115,7 @@ void mostrarAlumnos(eAlumno vec[], int tam)
     system("cls");
     printf("**** Listado de Alumnos ****\n\n");
 
-    printf(" Legajo Nombre Edad Sexo Nota1 Nota2 Promedio FIngreso\n");
+    printf(" Legajo      Nombre    Edad   Sexo   Nota1 Nota2   Promedio   FIngreso\n");
     for(int i=0; i < tam; i++)
     {
         if( vec[i].isEmpty == 0)
@@ -146,7 +143,7 @@ void ordenarAlumnos(eAlumno vec[], int tam)
     {
         for(int j= i+1; j <tam; j++)
         {
-            if( vec[i].legajo > vec[j].legajo  && vec[i].isEmpty == 0 && vec[j].isEmpty == 0)
+            if( vec[i].promedio > vec[j].promedio  && vec[i].isEmpty == 0 && vec[j].isEmpty == 0)
             {
                 auxAlumno = vec[i];
                 vec[i] = vec[j];
@@ -154,6 +151,7 @@ void ordenarAlumnos(eAlumno vec[], int tam)
             }
         }
     }
+    printf("\nAlumnos ordenados por Promedio\n\n");
 }
 
 int menu()
@@ -411,7 +409,6 @@ int altaAlumnoAuto(eAlumno alumnos[], int tam, int legajo)
 
     int todoOk = 0;
     int indice;
-    int esta;
 
     int edad;
     int nota1;
@@ -457,5 +454,29 @@ int altaAlumnoAuto(eAlumno alumnos[], int tam, int legajo)
     }
 
 return todoOk;
+}
 
+int hardcodearAlumnos(eAlumno vec[], int tam, int cant){
+    int cont = 0;
+
+    eAlumno listaAuxiliar[] = {
+        {20000, "Juan",     21, 'm', 2, 10, 6,{12, 5,  2018}, 0},
+        {20001, "Laura",    20, 'f', 6, 8,  7,{22, 8,  2017}, 0},
+        {20002, "Yamila",   31, 'f', 5, 9,  7,{24, 2,  2014}, 0},
+        {20003, "Bruno",    22, 'm', 8, 10, 9,{7,  1,  2012}, 0},
+        {20004, "Diego",    24, 'm', 6, 10, 8,{14, 9,  2017}, 0},
+        {20005, "Paula",    28, 'f', 2, 4,  3,{16, 10, 2018}, 0},
+        {20006, "Camila",   21, 'f', 6, 6,  6,{5,  8,  2014}, 0},
+        {20007, "Daniel",   21, 'm', 5, 5,  5,{15, 10, 2012}, 0},
+        {20008, "Fiorella", 21, 'f', 2, 10, 6,{3,  2,  2018}, 0},
+        {20009, "Clara",    21, 'f', 2, 2,  2,{12, 5,  2015}, 0}
+    };
+
+    if(cant <= tam && cant < 11){
+        for(int i = 0 ; i < cant ; i++){
+            vec[i] = listaAuxiliar[i];
+            cont++;
+        }
+    }
+    return cont;
 }
