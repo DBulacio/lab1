@@ -13,3 +13,60 @@
 	<string.h>
 	"autos.h"
 
+1571020408 source:c:\users\danie\desktop\lab1-master\bulacio_parcial\color.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"color.h"
+
+1571020308 c:\users\danie\desktop\lab1-master\bulacio_parcial\color.h
+
+1571020308 source:c:\users\danie\desktop\lab1-master\bulacio_parcial\autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"autos.h"
+
+1571020816 c:\users\danie\desktop\lab1-master\bulacio_parcial\autos.h
+	"color.h"
+	"marca.h"
+	"servicio.h"
+
+1571020308 c:\users\danie\desktop\lab1-master\bulacio_parcial\marca.h
+
+1571020307 c:\users\danie\desktop\lab1-master\bulacio_parcial\servicio.h
+
+1571020308 source:c:\users\danie\desktop\lab1-master\bulacio_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"autos.h"
+	"trabajo.h"
+	"servicio.h"
+	"marca.h"
+	"color.h"
+
+1571020531 c:\users\danie\desktop\lab1-master\bulacio_parcial\trabajo.h
+	"autos.h"
+	"servicio.h"
+	"marca.h"
+	"color.h"
+
+1571020408 source:c:\users\danie\desktop\lab1-master\bulacio_parcial\marca.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"marca.h"
+
+1571020408 source:c:\users\danie\desktop\lab1-master\bulacio_parcial\servicio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"servicio.h"
+
+1571020408 source:c:\users\danie\desktop\lab1-master\bulacio_parcial\trabajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"trabajo.h"
+
