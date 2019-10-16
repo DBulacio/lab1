@@ -5,16 +5,17 @@
 
 void listarServicio(Servicio x)
 {
-    printf("  %d  %15s\n",
+    printf("  %d  %15s       %d\n",
            x.id,
-           x.descripcion);
+           x.descripcion,
+           x.precio);
 }
 
 void listarServicios(Servicio vec[], int tam){
     int flag = 0;
     system("cls");
 
-    printf(" ID                  COLOR\n");
+    printf(" ID                  COLOR    PRECIO\n");
 
     for(int i=0; i < tam; i++)
     {

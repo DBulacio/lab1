@@ -147,3 +147,26 @@ void initTrabajo(Trabajo vec[], int tam)
         vec[i].isEmpty = 1;
     }
 }
+
+int hardcodearTrabajos(Trabajo trabajos[], int tTrabajos, int cant){
+    int cont = 0;
+
+    Trabajo suplentes[] ={
+    {20000, 112, 20003, {16, 10, 2019}, 0},
+    {20001, 111, 20001, {15, 10, 2019}, 0},
+    {20002, 113, 20001, {14, 10, 2019}, 0},
+    {20003, 112, 20000, {14, 10, 2019}, 0},
+    {20004, 111, 20002, {12, 10, 2019}, 0},
+    };
+
+    if( cant <= 5 && tTrabajos >= cant)
+    {
+        for(int i=0; i < cant; i++)
+        {
+            trabajos[i] = suplentes[i];
+            cont++;
+        }
+    }
+
+    return cont;
+}

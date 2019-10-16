@@ -316,3 +316,26 @@ int modificarAuto(Auto vec[], int tam, Marca marcas[], int tMarcas, Color colore
     return todoOk;
 }
 
+int hardcodearAutos(Auto autos[], int tAutos, int cant){
+    int cont = 0;
+
+    Auto suplentes[] = {
+    {1000, 111, 1001, 5002, 2010, 0},
+    {1001, 112, 1003, 5000, 2012, 0},
+    {1002, 113, 1002, 5004, 2015, 0},
+    {1003, 114, 1000, 5003, 2010, 0},
+    {1004, 115, 1001, 5002, 2015, 0},
+    };
+
+    if( cant <= 5 && tAutos >= cant)
+    {
+        for(int i=0; i < cant; i++)
+        {
+
+            autos[i] = suplentes[i];
+            cont++;
+        }
+    }
+
+    return cont;
+}
