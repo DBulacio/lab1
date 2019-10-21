@@ -1,0 +1,22 @@
+	segmento de codigo
+	 memoria estatica
+	       heap*
+	  memoria libre*
+	      stack*
+
+
+
+* -> memoria dinamica
+==========================
+Para usar la memoria dinamica:
+
+malloc( sizeof(int) ) // Cantidad de memoria que quiero en Bytes (Memory Allocation)
+		      // Devuelve la direccion de memoria (si la encuentra) o null, como void*
+
+malloc( sizeof(char) * 20 ) 		// 20 Bytes
+p = (int*) malloc( sizeof(int) );	// Hay que castearlo
+if( p == NULL )
+  exit(EXIT_FAILURE);	// Para asegurarse de que consiguio lugar
+*p = 38;
+
+calloc(can, sizeof());	// Devuelve la posicion e inicializa las posiciones en 0
