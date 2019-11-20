@@ -1,0 +1,13 @@
+autos con letra
+
+filter -> devuelve una nueva lista con alguno de los elementos
+
+map -> le pasas 10 personas y te devuelve una lista con 10 nombres
+
+map :: recibe la lista y una funcion, map lo UNICO que hace es pasarle
+       los elementos de la lista a pFunc, y crea una lista que contiene
+       solo lo que devuelve pFunc
+
+filter :: recibe la lista, pFunc y un tipo. Lo UNICO que hace es pasarle
+	el elemento y el tipo a pFunc, y si ese elemento es de ese tipo
+	lo agrega a una lista.
